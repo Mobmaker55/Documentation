@@ -18,7 +18,7 @@ export default withPwa(defineConfig({
     ],
     server: {
       host: '0.0.0.0',
-      port: 80,
+      port: 8000,
     }
   },
   title: title,
@@ -39,6 +39,7 @@ export default withPwa(defineConfig({
     siteTitle: "WinDurango",
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'Running', link: '/running-a-game' },
       { text: 'Setup', link: '/build-contrib' },
       { text: 'Team', link: '/team' },
     ],
@@ -48,11 +49,13 @@ export default withPwa(defineConfig({
     },
 
     sidebar: generateSidebar({
-      sortFolderTo: "top",
+      sortFolderTo: "bottom",
       documentRootPath: "/docs",
+      sortMenusByFrontmatterOrder: true,
+      sortMenusOrderByDescending: true,
       collapsed: true,
       capitalizeEachWords: true,
-      rootGroupText: 'Main',
+      rootGroupText: '',
       hyphenToSpace: true,
       includeEmptyFolder: false
     }),
